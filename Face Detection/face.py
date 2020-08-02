@@ -73,7 +73,7 @@ def classify_face(im):
                     'alertId':str(id),
                     'classId':'100',
                     'className':'CO6IC',
-                    'img':base64data,
+                    'img':str(base64data),
                     'name':'UNKNOWN PERSON DETECTED',
                     'timestamp':str(datetime.now()),
                     'verify':'0'
