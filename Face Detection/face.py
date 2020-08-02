@@ -15,11 +15,11 @@ from firebase_admin import firestore
 cred = credentials.Certificate('akey.json')
 
 firebase_admin.initialize_app(cred)
-def fn(NAME):
-  with open(NAME,"rb") as f:
-    data=f.read()
-    from base64 import urlsafe_b64encode,urlsafe_b64decode
-    base64data=urlsafe_b64encode(data)
+# def fn(NAME):
+#   with open(NAME,"rb") as f:
+#     data=f.read()
+#     from base64 import urlsafe_b64encode,urlsafe_b64decode
+#     base64data=urlsafe_b64encode(data)
 
 SAVE_PATH="C:\\face_rec\\unknown"
 
@@ -66,6 +66,8 @@ def classify_face(im):
             data=f.read()
             from base64 import urlsafe_b64encode,urlsafe_b64decode
             base64data=urlsafe_b64encode(data)
+            #important if you are using flutter as frontend
+            ims=base64data.decode('ascii')
         db=firestore.client()
         id=random.random()
         doc_ref = db.collection('Alert').document(str(id))  
@@ -73,7 +75,7 @@ def classify_face(im):
                     'alertId':str(id),
                     'classId':'100',
                     'className':'CO6IC',
-                    'img':str(base64data),
+                    'img':str(ims),
                     'name':'UNKNOWN PERSON DETECTED',
                     'timestamp':str(datetime.now()),
                     'verify':'0'
