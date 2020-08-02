@@ -1,0 +1,1 @@
+python export_inference_graph.py --input_type image_tensor --pipeline_config_path training/pipeline.config --trained_checkpoint_prefix training/model.ckpt-50000 --output_directory inference_graph
