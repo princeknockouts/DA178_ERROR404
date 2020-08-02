@@ -9,6 +9,8 @@ import sys
 import tarfile
 import tensorflow as tf
 import zipfile
+import random
+import firebase_admin
 
 from collections import defaultdict
 from io import StringIO
@@ -19,7 +21,14 @@ from IPython.display import display
 from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
+from firebase_admin import credentials
+from firebase_admin import firestore
 
+cred = credentials.Certificate('akey.json')
+
+firebase_admin.initialize_app(cred)
+
+db=firestore.client()
 # patch tf1 into `utils.ops`
 utils_ops.tf = tf.compat.v1
 
@@ -105,11 +114,25 @@ def show_inference(model, image_path):
   display(Image.fromarray(image_np))
 
 
-# def fn(NAME):
-#   with open(NAME,"rb") as f:
-#     data=f.read()
-    #from base64 import urlsafe_b64encode,urlsafe_b64decode
-    #base64data=urlsafe_b64encode(data)
+def fn(NAME):
+    with open(NAME,"rb") as f:
+            data=f.read()
+            from base64 import urlsafe_b64encode,urlsafe_b64decode
+            base64data=urlsafe_b64encode(data)
+            #important if you are using flutter as frontend
+            ims=base64data.decode('ascii')
+            db=firestore.client()
+            id=random.random()
+            doc_ref = db.collection('Alert').document(str(id))  
+            doc_ref.set({
+                    'alertId':str(id),
+                    'classId':'100',
+                    'className':'CO6IC',
+                    'img':str(ims),
+                    'name':'Copying',
+                    'timestamp':str(datetime.now()),
+                    'verify':'0'
+            })
 
 import cv2
 ic=cv2.VideoCapture(0)
@@ -145,12 +168,15 @@ while(True):
     else:
       d[item_name]=1
 
+
   if("cell phone" in d):
     print(d)
     NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
     print(NAME)
     img=Image.fromarray(frame1)
     img.save(NAME)
+    fn(NAME)
+
   cv2.imshow("Output",frame1)
   # fn(NAME)
   if cv2.waitKey(1) & 0xFF == ord('q'):
