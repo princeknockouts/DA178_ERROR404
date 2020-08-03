@@ -31,8 +31,24 @@ FLAGS = flags.FLAGS
 def class_text_to_int(row_label):
     if row_label == 'student':
         return 1
-    elif row_label == 'student_copying':
+    elif row_label == 'studentcopying':
         return 2
+    elif row_label == 'chit':
+        return 3
+    elif row_label == 'invigilator':
+        return 4
+    elif row_label == 'studentsleep':
+    	return 5
+    elif row_label == 'cellphone':
+    	return 6
+    elif row_label == 'studentasking':
+    	return 7
+    elif row_label == 'earphone':
+    	return 8
+    elif row_label == 'gesture':
+    	return 9
+    elif row_label == 'student_copying':
+    	return 2
     else:
         None
 

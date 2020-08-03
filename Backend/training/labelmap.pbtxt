@@ -5,6 +5,32 @@ item {
 
 item {
   id: 2
-  name: 'student_copying'
+  name: 'studentcopying'
+}
+item {
+  id: 3
+  name: 'chit'
+}
+item {
+  id: 4
+  name: 'invigilator'
+}
+item {
+  id: 5
+  name: 'studentsleep'
+}
+item {
+  id: 6
+  name: 'cellphone'
+}
+item {
+  id: 7
+  name: 'studentsleep'
+}item {
+  id: 8
+  name: 'earphone'
+}item {
+  id: 9
+  name: 'gesture'
 }
 

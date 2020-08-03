@@ -169,6 +169,20 @@ while(True):
       d[item_name]=1
 
 
+  if("studentcopying" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("student_copying" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
   if("cell phone" in d):
     print(d)
     NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
@@ -176,6 +190,41 @@ while(True):
     img=Image.fromarray(frame1)
     img.save(NAME)
     fn(NAME)
+  if("chit" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("studentasking" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("cellphone" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("earphone" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("gesture" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)  
 
   cv2.imshow("Output",frame1)
   # fn(NAME)

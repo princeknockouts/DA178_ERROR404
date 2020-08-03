@@ -35,7 +35,7 @@ utils_ops.tf = tf.compat.v1
 # Patch the location of gfile
 tf.gfile = tf.io.gfile
 tf.compat.v1.enable_eager_execution()
-MODEL_PATH="C:\\tensorflow1\\models\\research\\object_detection\\faster_rcnn"
+MODEL_PATH="C:\\tensorflow1\\models\\research\\object_detection\\training"
 SAVE_PATH="C:\\tensorflow1\\models\\research\\object_detection\\saved_images"
 PATH="C:\\tensorflow1\\models\\research\\object_detection\\saved_video\\test.mp4"
 try:
@@ -169,7 +169,56 @@ while(True):
       d[item_name]=1
 
 
+  if("studentcopying" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("student_copying" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
   if("cell phone" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("chit" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("studentasking" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("cellphone" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("earphone" in d):
+    print(d)
+    NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
+    print(NAME)
+    img=Image.fromarray(frame1)
+    img.save(NAME)
+    fn(NAME)
+  if("gesture" in d):
     print(d)
     NAME=SAVE_PATH+"\\"+datetime.now().strftime("%d-%m-%Y_%H-%M-%S")+".jpeg"
     print(NAME)
